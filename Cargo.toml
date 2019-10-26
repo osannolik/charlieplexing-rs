@@ -1,0 +1,42 @@
+[package]
+edition = "2018"
+authors = [
+    "Jonas <osannolik@godtycklig.se>",
+]
+categories = [
+    "embedded",
+    "no-std",
+]
+description = "Charlieplexed outputs"
+documentation = ""
+
+keywords = [
+    "no_std",
+    "no-std",
+    "io",
+]
+
+license = "MIT"
+name = "charlieplexing"
+readme = "README.md"
+repository = "https://github.com/osannolik/charlieplexing-rs"
+version = "0.1.0"
+
+[patch.crates-io]
+embedded-hal = { path = "../embedded-hal", features = ["unproven"] }
+
+[dependencies]
+embedded-hal = { version = "0.2.3", features = ["unproven"] }
+generic-array = { version = "0.13.2" }
+
+[profile.dev]
+codegen-units = 1
+incremental = false
+debug = true
+opt-level = "s"
+
+[profile.release]
+codegen-units = 1
+lto = true
+debug = true
+opt-level = "s"
