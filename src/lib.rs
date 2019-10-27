@@ -1,3 +1,5 @@
+#![no_std]
+
 pub use embedded_hal::digital::v2::PinState as PinState;
 
 // const generics would be cool...
